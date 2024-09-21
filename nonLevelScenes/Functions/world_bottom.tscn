@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dap4itv6orvwy"]
+
+[ext_resource type="Script" path="res://scripts/Misc/WorldBottom.gd" id="1_3q1ky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjf4i"]
+size = Vector2(36913, 1952.75)
+
+[node name="WorldBottom" type="Area2D"]
+script = ExtResource("1_3q1ky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(85, -131)
+shape = SubResource("RectangleShape2D_bjf4i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://jjm3cgnkearm"]
+
+[ext_resource type="Script" path="res://scripts/Creatures/ShootEnemy.gd" id="1_7ds07"]
+[ext_resource type="Script" path="res://scripts/States/EnemyStates/BoxEnemyStates/EnemyStates.gd" id="2_h2y0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv8mc"]
+size = Vector2(83, 185)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uyl7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur8i5"]
+size = Vector2(1191, 247)
+
+[node name="ShootEnemy" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_7ds07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-31.5, -82.5)
+shape = SubResource("RectangleShape2D_rv8mc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.45098, 0, 0.113725, 1)
+self_modulate = Color(1, 1, 0.396078, 1)
+position = Vector2(-31.5, -82.5)
+scale = Vector2(83, 185)
+mesh = SubResource("BoxMesh_uyl7e")
+
+[node name="BoxEnemyArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxEnemyArea"]
+position = Vector2(-32, -116.5)
+shape = SubResource("RectangleShape2D_ur8i5")
+
+[node name="EnemyState" type="Node" parent="."]
+script = ExtResource("2_h2y0n")
+
+[node name="bullet_pos_right" type="Marker2D" parent="."]
+position = Vector2(83, -126)

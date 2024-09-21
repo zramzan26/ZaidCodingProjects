@@ -1,0 +1,143 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdbx0epm3wk0w"]
+
+[ext_resource type="PackedScene" uid="uid://bd7r68v58k3k0" path="res://nonLevelScenes/Creatures/player.tscn" id="1_x5ypm"]
+[ext_resource type="PackedScene" uid="uid://bwei2wi71chaa" path="res://nonLevelScenes/Creatures/demo_boss.tscn" id="2_3ta7e"]
+[ext_resource type="PackedScene" uid="uid://cf2ft8inlf4j" path="res://nonLevelScenes/Creatures/box_enemy.tscn" id="3_v5xpp"]
+[ext_resource type="PackedScene" uid="uid://dap4itv6orvwy" path="res://nonLevelScenes/Functions/world_bottom.tscn" id="4_tde01"]
+[ext_resource type="PackedScene" uid="uid://dswhdbn161ohd" path="res://level_next.tscn" id="5_8e8ot"]
+[ext_resource type="PackedScene" uid="uid://ck8sn15rchbl0" path="res://nonLevelScenes/Functions/checkpoint.tscn" id="6_abuns"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_a5nle"]
+size = Vector2(1000, 100)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h7pjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxi8r"]
+size = Vector2(998, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35lqv"]
+size = Vector2(5671, 577)
+
+[node name="level_4" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_x5ypm")]
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(440, 64)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_a5nle")
+texture = SubResource("ViewportTexture_h7pjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_fxi8r")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(1547, 52)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_a5nle")
+texture = SubResource("ViewportTexture_h7pjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_fxi8r")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(2767, 40)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform4"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_a5nle")
+texture = SubResource("ViewportTexture_h7pjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_fxi8r")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(3800, 1062)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform5"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_a5nle")
+texture = SubResource("ViewportTexture_h7pjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_fxi8r")
+
+[node name="Platform6" type="StaticBody2D" parent="."]
+position = Vector2(6379, 1057)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform6"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_a5nle")
+texture = SubResource("ViewportTexture_h7pjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_fxi8r")
+
+[node name="Platform7" type="StaticBody2D" parent="."]
+position = Vector2(5108, 1054)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform7"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_a5nle")
+texture = SubResource("ViewportTexture_h7pjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform7"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_fxi8r")
+
+[node name="Platform8" type="StaticBody2D" parent="."]
+position = Vector2(7444, 959)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform8"]
+modulate = Color(0.25098, 1, 1, 1)
+position = Vector2(2337.5, 233.75)
+scale = Vector2(5.675, 5.675)
+mesh = SubResource("QuadMesh_a5nle")
+texture = SubResource("ViewportTexture_h7pjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform8"]
+position = Vector2(2344.5, 231.5)
+shape = SubResource("RectangleShape2D_35lqv")
+
+[node name="DemoBoss" parent="." instance=ExtResource("2_3ta7e")]
+position = Vector2(9022, -71)
+
+[node name="BoxEnemy2" parent="." instance=ExtResource("3_v5xpp")]
+position = Vector2(11693, 753)
+
+[node name="BoxEnemy3" parent="." instance=ExtResource("3_v5xpp")]
+position = Vector2(11031, 753)
+
+[node name="BoxEnemy4" parent="." instance=ExtResource("3_v5xpp")]
+position = Vector2(12025, 744)
+
+[node name="BoxEnemy5" parent="." instance=ExtResource("3_v5xpp")]
+position = Vector2(10683, 749)
+
+[node name="BoxEnemy6" parent="." instance=ExtResource("3_v5xpp")]
+position = Vector2(11356, 716)
+
+[node name="WorldBottom" parent="." instance=ExtResource("4_tde01")]
+position = Vector2(2295, 4239)
+
+[node name="LevelNext" parent="." instance=ExtResource("5_8e8ot")]
+position = Vector2(13148, 693)
+
+[node name="Checkpoint" parent="." instance=ExtResource("6_abuns")]
+position = Vector2(1746, -110)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg4ko03rvjnj7"]
+
+[ext_resource type="Script" path="res://scripts/AttacksAndconsumables/bigEnergyPack.gd" id="1_74vkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtgws"]
+size = Vector2(59, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ey0nr"]
+
+[node name="bigEnergyPack" type="Area2D" groups=["EnergyPack"]]
+script = ExtResource("1_74vkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_jtgws")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.639216, 0.909804, 1)
+scale = Vector2(115, 51)
+mesh = SubResource("BoxMesh_ey0nr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

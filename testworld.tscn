@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://cey83wase0e42"]
+
+[ext_resource type="PackedScene" uid="uid://bd7r68v58k3k0" path="res://nonLevelScenes/Creatures/player.tscn" id="1_rm6sg"]
+[ext_resource type="PackedScene" uid="uid://dh65uu5qhsq58" path="res://nonLevelScenes/AttacksAndConsumable/coin.tscn" id="3_pfcnu"]
+[ext_resource type="PackedScene" uid="uid://bg4ko03rvjnj7" path="res://nonLevelScenes/AttacksAndConsumable/big_energy_pack.tscn" id="4_2316b"]
+[ext_resource type="PackedScene" uid="uid://bgt7pj512p017" path="res://nonLevelScenes/AttacksAndConsumable/smallhealthpack.tscn" id="5_ep1px"]
+[ext_resource type="PackedScene" uid="uid://dap4itv6orvwy" path="res://nonLevelScenes/Functions/world_bottom.tscn" id="6_2rjpa"]
+[ext_resource type="PackedScene" uid="uid://ck8sn15rchbl0" path="res://nonLevelScenes/Functions/checkpoint.tscn" id="7_wi5yt"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_grgvb"]
+size = Vector2(1000, 100)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qdgoo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5af68"]
+size = Vector2(998, 101)
+
+[node name="TESTWORLD" type="Node2D"]
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(1422, 569)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_grgvb")
+texture = SubResource("ViewportTexture_qdgoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_5af68")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(2419, 569)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform5"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_grgvb")
+texture = SubResource("ViewportTexture_qdgoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_5af68")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(3244, 569)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_grgvb")
+texture = SubResource("ViewportTexture_qdgoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_5af68")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(425, 569)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_grgvb")
+texture = SubResource("ViewportTexture_qdgoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_5af68")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(4746, 555)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform4"]
+modulate = Color(0.25098, 1, 1, 1)
+mesh = SubResource("QuadMesh_grgvb")
+texture = SubResource("ViewportTexture_qdgoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_5af68")
+
+[node name="coin" parent="." instance=ExtResource("3_pfcnu")]
+position = Vector2(3002, 438)
+
+[node name="bigEnergyPack" parent="." instance=ExtResource("4_2316b")]
+position = Vector2(3195, 433)
+
+[node name="smallhealthpack" parent="." instance=ExtResource("5_ep1px")]
+position = Vector2(3409, 426)
+
+[node name="WorldBottom" parent="." instance=ExtResource("6_2rjpa")]
+position = Vector2(264, 2494)
+
+[node name="Checkpoint" parent="." instance=ExtResource("7_wi5yt")]
+position = Vector2(624, 401)
+
+[node name="Player" parent="." instance=ExtResource("1_rm6sg")]
+position = Vector2(119, 441)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(748, 186)
+zoom = Vector2(0.75, 0.75)

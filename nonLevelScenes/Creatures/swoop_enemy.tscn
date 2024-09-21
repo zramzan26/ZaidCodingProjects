@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d542gboxwlf4"]
+
+[ext_resource type="Script" path="res://scripts/Creatures/SwoopEnemy.gd" id="1_14wp0"]
+[ext_resource type="Script" path="res://scripts/States/EnemyStates/BoxEnemyStates/EnemyStates.gd" id="2_y62y0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2iw0"]
+size = Vector2(209, 162)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ogj1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lfk4"]
+size = Vector2(1634.5, 839)
+
+[node name="SwoopEnemy" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_14wp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36.5, 49)
+shape = SubResource("RectangleShape2D_p2iw0")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.8, 0, 0.145098, 1)
+position = Vector2(38.5, 49.5)
+scale = Vector2(225, 177)
+mesh = SubResource("QuadMesh_ogj1e")
+
+[node name="BoxEnemyArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxEnemyArea"]
+position = Vector2(32.25, 378.5)
+shape = SubResource("RectangleShape2D_2lfk4")
+
+[node name="EnemyState" type="Node" parent="."]
+script = ExtResource("2_y62y0")
+WANDER_TIME_INIT = null

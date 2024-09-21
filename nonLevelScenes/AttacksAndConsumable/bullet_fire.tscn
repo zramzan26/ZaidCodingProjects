@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://du8jhd8o1yf0"]
+
+[ext_resource type="Script" path="res://scripts/AttacksAndconsumables/bulletFire.gd" id="1_feq2p"]
+[ext_resource type="Texture2D" uid="uid://by3s5u5r7itdg" path="res://pictureAssets/firstBlast.png" id="2_seqwn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1wtn"]
+radius = 35.0143
+
+[node name="bulletFire" type="Area2D"]
+script = ExtResource("1_feq2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-32, -1)
+texture = ExtResource("2_seqwn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a1wtn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

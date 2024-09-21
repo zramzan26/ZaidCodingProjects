@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgt7pj512p017"]
+
+[ext_resource type="Script" path="res://scripts/AttacksAndconsumables/smallhealthpack.gd" id="1_hvatn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpgmb"]
+size = Vector2(59, 51)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rv88x"]
+
+[node name="smallhealthpack" type="Area2D" groups=["HealthPack"]]
+script = ExtResource("1_hvatn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_hpgmb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.721569, 0.117647, 1)
+position = Vector2(-0.625, 0.124999)
+scale = Vector2(59.25, 51.75)
+mesh = SubResource("BoxMesh_rv88x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

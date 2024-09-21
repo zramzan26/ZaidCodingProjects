@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh65uu5qhsq58"]
+
+[ext_resource type="Script" path="res://scripts/AttacksAndconsumables/coin.gd" id="1_1gf1l"]
+[ext_resource type="Texture2D" uid="uid://b4o6t445jd7ut" path="res://pictureAssets/coin-export.png" id="2_77kix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg2uw"]
+size = Vector2(65, 63)
+
+[node name="coin" type="Area2D" groups=["coin"]]
+script = ExtResource("1_1gf1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 1.5)
+shape = SubResource("RectangleShape2D_qg2uw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(0.589286, 0.589286)
+texture = ExtResource("2_77kix")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

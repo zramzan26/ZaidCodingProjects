@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dswhdbn161ohd"]
+
+[ext_resource type="Script" path="res://scripts/LevelNext.gd" id="1_10mga"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dly2u"]
+size = Vector2(1000, 100)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_imnmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1eng"]
+size = Vector2(361, 248)
+
+[node name="LevelNext" type="Area2D"]
+modulate = Color(0.784314, 0.898039, 0.996078, 1)
+position = Vector2(818, 215)
+script = ExtResource("1_10mga")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.658824, 0.901961, 1, 1)
+position = Vector2(-6, 3)
+scale = Vector2(0.364, 2.44)
+mesh = SubResource("QuadMesh_dly2u")
+texture = SubResource("ViewportTexture_imnmy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.0588235, 1, 1, 1)
+position = Vector2(-8, -1)
+shape = SubResource("RectangleShape2D_j1eng")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
